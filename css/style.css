@@ -1,22 +1,29 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     padding: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 100vh;
+    color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: #333;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* body{
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
 }
 
-.container{
+/* .container{
     max-width: 1200px;
     margin: 0 auto;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -26,23 +33,21 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+} */
 
-form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
+form {
+    margin-bottom: 20px;
 }
-input[type="text"], input[type="email"], input[type="password"]{
-    padding: 10px;
-    margin: 10px 0;
+input {
+    padding: 5px;
+    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
-.form-container{
+
+/* .form-container{
     background: lenear-gradient(145deg, #4bfa06 0%, #d4d64c 100%);
     padding: 20px;
     border-radius: 5px;
@@ -53,4 +58,4 @@ input[type="text"], input[type="email"], input[type="password"]{
 .form-container h2{
     margin-bottom: 20px;
     text-align: center;
-}
+} */
