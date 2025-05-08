@@ -26,7 +26,6 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Função addTaskToUl
-
 function addTaskToUl(task) {
     const li = document.createElement("li");
     li.className = task.completed ? "completed" : "";
@@ -41,8 +40,35 @@ function addTaskToUl(task) {
             🗑️
             </button>
         </div>
-
     `;
     taskList.appendChild(li);
     
 }
+
+async function loadTask() {
+    try {
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error("Erro ao carregar as tarefas: 😒");
+
+        const tasks = await res.json();
+        taskList.innerHTML = ""; // Limpa a lista antes de adicionar as tarefas
+        tasks.forEach(addTaskToUl);
+    } catch (err) {
+        alert("Erro ao carregar as tarefas:🤦‍♂️ " + err.message);
+    }
+}
+
+async function toggleComplete(id, completed) {
+    try {
+        await fetch(`${apiUrl}/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: json.stringify({ completed: !completed })
+        });
+        loadTask();
+    } catch (err) {
+        alert("Erro ao atualizar a tarefa: 😢 " + err.message);
+    }
+}
+
+
