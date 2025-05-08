@@ -71,4 +71,18 @@ async function toggleComplete(id, completed) {
     }
 }
 
+async function deleteTask(id) {
+    try {
+        await fetch(`${apiUrl}/${id}`, {
+           method: "DELETE", 
+        });
+        loadTask();
+    } catch (err) {
+        alert("Erro ao excluir a tarefa: 😢 " + err.message);
+    }
+}
+
+loadTask();
+// Adiciona um evento de clique ao botão "Carregar Tarefas"
+
 
