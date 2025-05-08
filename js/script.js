@@ -44,4 +44,5 @@ function addTaskToUl(task) {
 
     `;
     taskList.appendChild(li);
+    
 }
