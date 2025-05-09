@@ -54,5 +54,13 @@ app.post("/tasks", (req, res) => {
     res.status(201).json(newTask);
 });
 
+app.put("/tasks/:id", (req, res) => {
+    const tasks = readTasks();
+    const taskIndex = tasks.findIdex(t => t.id == req.params.id);
+    if(taskIndex === -1) return res.status(400).json({ message: "Task not found" });
+    tasks[taskIndex].completed = req.body.completed;
+    writeTasks(tasks);
+})
+
 
 
