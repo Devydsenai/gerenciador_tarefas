@@ -62,6 +62,21 @@ input {
     font-size: 16px;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    display: flex;;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 /* .form-container{
     background: lenear-gradient(145deg, #4bfa06 0%, #d4d64c 100%);

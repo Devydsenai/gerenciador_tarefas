@@ -58,9 +58,25 @@ app.put("/tasks/:id", (req, res) => {
     const tasks = readTasks();
     const taskIndex = tasks.findIdex(t => t.id == req.params.id);
     if(taskIndex === -1) return res.status(400).json({ message: "Task not found" });
-    tasks[taskIndex].completed = req.body.completed;
+    tasks[taskIndex] = {...tasks[taskIndex], ...req.body };
     writeTasks(tasks);
-})
+    res.json(tasks[taskIndex]);
+
+});
+
+app.delete("/tasks/:id", (req, res) => {
+    let tasks = fs.readTasks();
+
+    tasks = tasks.filter(t => t.id != req.params.id);
+    writeTasks(tasks);
+    res.status(204).send();
+
+
+});
+
+// Inicia o servidor
+app.listen(PORT, () =>  console.log(`Servidor rodando em http://localhost:${PORT}`));
+
 
 
 
