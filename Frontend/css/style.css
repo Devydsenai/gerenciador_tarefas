@@ -77,6 +77,11 @@ li {
     align-items: center;
 }
 
+.complete {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
 
 /* .form-container{
     background: lenear-gradient(145deg, #4bfa06 0%, #d4d64c 100%);
