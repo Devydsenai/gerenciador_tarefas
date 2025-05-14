@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
         const res = await fetch(apiUrl, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ title, description })
+            body: JSON.stringify({ title, description }),
         });
 
         if (!res.ok) throw new Error("Erro ao adicionar a tarefa");
@@ -63,7 +63,7 @@ async function toggleComplete(id, completed) {
         await fetch(`${apiUrl}/${id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
-            body: json.stringify({ completed: !completed })
+            body: JSON.stringify({ completed: !completed })
         });
         loadTask();
     } catch (err) {
